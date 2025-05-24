@@ -14,7 +14,7 @@ public class Generics<T> {
     }
 }
 interface GenericInterface<T> {
-    T getValue();
+    T getValue();     
 }
 class child<T> implements GenericInterface<T> {
      T value;
@@ -28,6 +28,7 @@ class child<T> implements GenericInterface<T> {
         return value;
     }
 }
+// List<Integer> list = new ArrayList<>(); List is a interface in java but ArrayList is a class that implements List interface
 class demo {
     public static void main(String[] args) {
         Generics<String> obj = new Generics<>("Hello");
