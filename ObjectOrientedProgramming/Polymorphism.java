@@ -1,4 +1,5 @@
 package ObjectOrientedProgramming;
+
 /*Static binding (a.k.a. early binding) means the method call is resolved at compile time.
 
 Java uses static binding for:
@@ -8,7 +9,7 @@ Static methods
 Private methods
 
 Final methods */
-public class Polymorphism {
+class Polymorphism {
     int num;
     String name;
 
@@ -23,6 +24,10 @@ public class Polymorphism {
     }
     protected void start() {
         System.out.println("Hi this function can start");
+    }
+    static void print() {
+        // this.num=0; this is not allowed as static method can only access static variable
+        System.out.println("hi my name is amit");
     }
 
     
@@ -48,9 +53,5 @@ class demo {
         Polymorphism obj2 = new child() ;
         obj1.start() ;
         obj2.start() ;
-
-
-    
-    
-    }
+}
 }
