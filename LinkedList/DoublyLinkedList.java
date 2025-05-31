@@ -87,17 +87,6 @@ public class DoublyLinkedList<T> {
             tail = current.prev;
         }
     }
-
-
-    public void displayForward() {
-        Node<T> current = head;
-        while (current != null) {
-            System.out.print(current.value);
-            if (current.next != null) System.out.print(" <=> ");
-            current = current.next;
-        }
-        System.out.println();
-    }
     public void displayBackward() {
         Node<T> current = tail;
         while (current != null) {
@@ -107,7 +96,9 @@ public class DoublyLinkedList<T> {
         }
         System.out.println();
     }
+
 }
+
 class Demo {
     public static void main(String[] args) {
         DoublyLinkedList<Integer> dll = new DoublyLinkedList<>();
