@@ -1,24 +1,24 @@
 package LinkedList;
 
-class Node<T> {
+class DoublyNode<T> {
     T value;
-    Node<T> prev;
-    Node<T> next;
+    DoublyNode<T> prev;
+    DoublyNode<T> next;
 
-    Node(T value) {
+    DoublyNode(T value) {
         this.value = value;
     }
 }
 
 public class DoublyLinkedList<T> {
-    private Node<T> head;
-    private Node<T> tail;
+    private DoublyNode<T> head;
+    private DoublyNode<T> tail;
     public DoublyLinkedList() {
         this.head = null;
         this.tail = null;
     }
     public void insertAtHead(T value) {
-        Node<T> newNode = new Node<>(value);
+        DoublyNode<T> newNode = new DoublyNode<>(value);
         if (head == null) {
             head = tail = newNode;
         } else {
@@ -29,7 +29,7 @@ public class DoublyLinkedList<T> {
     }
 
     public void insertAtTail(T value) {
-        Node<T> newNode = new Node<>(value);
+        DoublyNode<T> newNode = new DoublyNode<>(value);
         if (tail == null) {
             head = tail = newNode;
         } else {
@@ -40,7 +40,7 @@ public class DoublyLinkedList<T> {
     }
 
     public void insertAfter(T target, T value) {
-        Node<T> current = head;
+        DoublyNode<T> current = head;
         while (current != null && !current.value.equals(target)) {
             current = current.next;
         }
@@ -50,7 +50,7 @@ public class DoublyLinkedList<T> {
             return;
         }
 
-        Node<T> newNode = new Node<>(value);
+        DoublyNode<T> newNode = new DoublyNode<>(value);
         newNode.next = current.next;
         newNode.prev = current;
 
@@ -64,7 +64,7 @@ public class DoublyLinkedList<T> {
     }
 
     public void deleteNode(T value) {
-        Node<T> current = head;
+        DoublyNode<T> current = head;
 
         while (current != null && !current.value.equals(value)) {
             current = current.next;
@@ -88,7 +88,7 @@ public class DoublyLinkedList<T> {
         }
     }
     public void displayBackward() {
-        Node<T> current = tail;
+        DoublyNode<T> current = tail;
         while (current != null) {
             System.out.print(current.value);
             if (current.prev != null) System.out.print(" <=> ");
@@ -106,10 +106,8 @@ class Demo {
         dll.insertAtTail(20);
         dll.insertAtHead(5);
         dll.insertAfter(10, 15);
-        dll.displayForward();
-
         dll.deleteNode(10);
-        dll.displayForward();  
+        dll.displayBackward();
     }
 }
 
