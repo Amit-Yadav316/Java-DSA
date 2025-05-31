@@ -59,7 +59,6 @@ public class Deque {
         return value;
     }
 
-    // Remove from rear
     public int pollLast()  {
         if (isEmpty()) {
             System.out.println("Deque is empty");
